@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Stock Book | Sioux City Foundry Co.</title>
-  <meta name="description" content="Warehouse Stock Book guide and searchable steel category reference for Sioux City Foundry Co." />
+  <title>Stock Book &amp; Product Catalog | Sioux City Foundry Co.</title>
+  <meta name="description" content="Searchable Stock Book and multi-division product catalog for Sioux City Foundry Co.: Steel Warehouse, Reinforcing Steel, Contract Manufacturing, and Metal Casting." />
   <link rel="icon" href="./assets/scfvectorlogo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -55,30 +55,47 @@
   <main id="main" x-data="{
     rows: [],
     q: '',
+    division: 'All',
     group: 'All',
     init() {
       fetch('./data/stock-categories.json').then(r => r.json()).then(d => this.rows = d);
     },
+    get divisions() {
+      return ['All', ...new Set(this.rows.map(r => r.division))];
+    },
     get groups() {
-      return ['All', ...new Set(this.rows.map(r => r.group))];
+      const pool = this.division === 'All' ? this.rows : this.rows.filter(r => r.division === this.division);
+      return ['All', ...new Set(pool.map(r => r.group))];
+    },
+    setDivision(val) {
+      this.division = val;
+      if (this.group !== 'All' && !this.groups.includes(this.group)) {
+        this.group = 'All';
+      }
     },
     get filtered() {
       const term = this.q.trim().toLowerCase();
       return this.rows.filter(r => {
+        if (this.division !== 'All' && r.division !== this.division) return false;
         if (this.group !== 'All' && r.group !== this.group) return false;
         if (!term) return true;
-        return (r.category + ' ' + r.products + ' ' + r.processing).toLowerCase().includes(term);
+        return (r.division + ' ' + r.group + ' ' + r.category + ' ' + r.materials + ' ' + r.products + ' ' + r.processing).toLowerCase().includes(term);
       });
+    },
+    resetFilters() {
+      this.q = '';
+      this.division = 'All';
+      this.group = 'All';
     }
   }">
     <section class="page-hero">
       <div class="container">
-        <div class="eyebrow">Steel Service Center Catalog</div>
-        <h1>Warehouse Stock Book</h1>
-        <p>The Stock Book PDF is the official reference for warehouse steel categories and common mill sizes. Use the quick category filter below to locate product groups, then download the live PDF or call Warehouse Sales.</p>
+        <div class="eyebrow">Multi-Division Reference Catalog</div>
+        <h1>Stock Book &amp; Product Directory</h1>
+        <p>Search stocked steel shapes, alloys, safety gratings, cutting blades, reinforcing steel, fabricated tanks, machining, and iron castings across all four active Sioux City Foundry divisions, or open the official Stock Book PDF.</p>
         <div class="btn-row" style="margin-top: 1rem;">
           <a class="btn btn-blue" href="https://www.siouxcityfoundry.com/stockbook_view.pdf" target="_blank" rel="noopener">Download Live Stock Book PDF (~16 MB)</a>
-          <a class="btn btn-primary" href="tel:18883314660">Call Warehouse: 888-331-4660</a>
+          <a class="btn btn-primary" href="tel:18883314660">Warehouse: 888-331-4660</a>
           <button type="button" class="btn btn-secondary no-print" onclick="window.print()">Print Guide</button>
         </div>
       </div>
@@ -86,60 +103,88 @@
 
     <section class="section">
       <div class="container">
-        <div class="cta-band" style="margin-bottom: 2rem;">
+        <div class="cta-band" style="margin-bottom: 1.75rem;">
           <div style="display:flex; gap:1.25rem; align-items:center; flex-wrap:wrap;">
             <img src="./assets/stockbook.png" alt="Sioux City Foundry Stock Book cover" style="width:92px; border-radius:3px; border:1px solid rgba(255,255,255,0.2);" />
             <div>
               <h3>Official Stock Book PDF</h3>
-              <p>Hosted on siouxcityfoundry.com. Confirm current stock counts, material grades, and cut-to-length lead times with Warehouse Sales before quoting.</p>
+              <p>Hosted on siouxcityfoundry.com for mill sizes, weights, and legacy reference tables. Confirm current stock counts, material grades, and lead times directly with the division sales desk listed below.</p>
             </div>
           </div>
-          <a class="btn btn-blue" href="https://www.siouxcityfoundry.com/stockbook_view.pdf" target="_blank" rel="noopener">Open PDF ↗</a>
+          <a class="btn btn-blue" href="https://www.siouxcityfoundry.com/stockbook_view.pdf" target="_blank" rel="noopener">Open PDF &#8599;</a>
         </div>
 
-        <div class="filter-bar no-print" style="grid-template-columns: 1.5fr 1fr auto;">
+        <div class="filter-bar no-print" style="grid-template-columns: 1.4fr 1fr 1fr auto;">
           <div class="field">
-            <label for="stock-search">Filter categories or processing</label>
-            <input id="stock-search" class="input" type="search" x-model="q" placeholder="Search plate, beam, laser, grating, snow pusher..." />
+            <label for="stock-search">Search products, alloys, or processing</label>
+            <input id="stock-search" class="input" type="search" x-model="q" placeholder="Search stainless, rebar, beam, grip strut, snow pusher, ductile iron, tank..." />
+          </div>
+          <div class="field">
+            <label for="stock-division">Division</label>
+            <select id="stock-division" :value="division" @change="setDivision($event.target.value)">
+              <template x-for="d in divisions" :key="d">
+                <option :value="d" x-text="d === 'All' ? 'All Divisions' : d"></option>
+              </template>
+            </select>
           </div>
           <div class="field">
             <label for="stock-group">Product Group</label>
             <select id="stock-group" x-model="group">
               <template x-for="g in groups" :key="g">
-                <option :value="g" x-text="g"></option>
+                <option :value="g" x-text="g === 'All' ? 'All Groups' : g"></option>
               </template>
             </select>
           </div>
-          <button type="button" class="btn btn-secondary" @click="q=''; group='All'">Reset</button>
+          <button type="button" class="btn btn-secondary" @click="resetFilters()">Reset</button>
+        </div>
+
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:0.85rem; font-size:0.85rem; color:var(--ink-muted);">
+          <span class="mono" x-text="'Showing ' + filtered.length + ' of ' + rows.length + ' catalog categories'"></span>
+          <span>Click any division desk number to call directly, or route a quote by division.</span>
         </div>
 
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>Group</th>
-                <th>Category</th>
+                <th>Division &amp; Group</th>
+                <th>Category &amp; Materials</th>
                 <th>Typical Products</th>
                 <th>Available Processing</th>
-                <th>How to Order</th>
+                <th>Order Desk</th>
               </tr>
             </thead>
             <tbody>
-              <template x-for="row in filtered" :key="row.category">
+              <template x-for="row in filtered" :key="row.division + '-' + row.category">
                 <tr>
-                  <td><span class="tag" x-text="row.group"></span></td>
-                  <td><strong x-text="row.category"></strong></td>
+                  <td>
+                    <span class="tag" :class="row.divisionSlug === 'warehouse' ? '' : (row.divisionSlug === 'rebar' ? 'tag-ok' : (row.divisionSlug === 'contract' ? 'tag-accent' : 'tag-warn'))" x-text="row.division"></span>
+                    <div class="mono" style="margin-top:0.35rem; font-size:0.74rem; color:var(--ink-muted);" x-text="row.group"></div>
+                  </td>
+                  <td>
+                    <strong x-text="row.category"></strong>
+                    <div style="margin-top:0.3rem; font-size:0.82rem; color:var(--ink-muted);" x-text="row.materials"></div>
+                  </td>
                   <td x-text="row.products"></td>
                   <td x-text="row.processing"></td>
-                  <td x-text="row.howToOrder"></td>
+                  <td style="white-space:nowrap;">
+                    <a class="mono" style="font-weight:600; display:block; margin-bottom:0.35rem;" :href="row.deskHref" x-text="row.deskPhone"></a>
+                    <div style="font-size:0.8rem; color:var(--ink-muted); white-space:normal; margin-bottom:0.45rem;" x-text="row.howToOrder"></div>
+                    <a class="btn btn-secondary btn-sm no-print" :href="'./contact.html?division=' + row.divisionSlug">Route RFQ</a>
+                  </td>
                 </tr>
               </template>
+              <tr x-show="rows.length > 0 && filtered.length === 0" x-cloak>
+                <td colspan="5" style="text-align:center; padding:1.75rem; color:var(--ink-muted);">
+                  No catalog entries matched that search. Try clearing filters or call our main desk at <a class="mono" href="tel:18008310874">800-831-0874</a>.
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
 
         <p style="margin-top: 1rem; font-size: 0.88rem; color: var(--ink-muted);">
-          Illustrative category summary only. No live SKU counts or prices are published here. Need a specialty grade not shown in the PDF? Call Warehouse Sales at <a class="mono" href="tel:18883314660">888-331-4660</a>.
+          Catalog summary compiled from published Sioux City Foundry division and Stock Book listings. No live inventory counts or pricing are published here. Looking for a specialty alloy, custom size, or updated mill table not listed? Call Warehouse Sales at <a class="mono" href="tel:18883314660">888-331-4660</a> or the main plant line at <a class="mono" href="tel:18008310874">800-831-0874</a>.
         </p>
       </div>
     </section>
