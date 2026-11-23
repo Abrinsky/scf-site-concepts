@@ -183,12 +183,12 @@
     "division": "Metal Casting",
     "divisionSlug": "foundry",
     "group": "Iron Foundry Castings",
-    "category": "Gray, Ductile & Specialty Alloy Iron Castings",
-    "materials": "Gray Iron, Ductile Iron, Austempered Ductile, High Silicon Ductile, High Chrome Alloy, High Nickel Alloy, Ni-Hard",
-    "products": "Custom iron castings from ounces up to approximately 3,500 lbs. for agriculture, pumping, mining, oil and gas, and OEM weldment conversions.",
-    "processing": "Green sand (Hunter, Squeezer, Rotolift) and No-Bake molding, in-house pattern shop, metallurgical lab, heat treating, blasting, and grinding",
+    "category": "Jobbing, Wear-Resistant & Custom Alloy Iron Castings",
+    "materials": "Gray Iron, Ductile Iron, Austempered Ductile (ADI), White Iron, Ni-Hard, High Silicon Ductile, High Chrome Alloy, High Nickel Alloy, Custom OEM Formulas",
+    "products": "Jobbing foundry castings from ounces up to approximately 3,500 lbs. for agriculture, pumping, mining, oil and gas, industrial OEMs, and weldment conversions.",
+    "processing": "Green sand (Hunter, Squeezer, Rotolift), No-Bake, Isocure, and 3D-printed sand molding, in-house pattern shop, metallurgical lab, heat treating, plus integrated Plant 1 finish machining and fabrication",
     "deskPhone": "888-550-2564",
     "deskHref": "tel:18885502564",
-    "howToOrder": "Send casting drawings, alloy grade, part weight, and annual volume to Plant 2 Foundry Sales."
+    "howToOrder": "Send casting drawings, alloy chemistry, part weight, and volume to Plant 2 Foundry Sales."
   }
 ]
