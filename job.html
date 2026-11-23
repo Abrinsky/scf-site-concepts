@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Job Detail | Sioux City Foundry Co.</title>
+  <meta name="description" content="Direct shareable job posting detail sheet for Sioux City Foundry Co." />
+  <link rel="icon" href="./assets/scfvectorlogo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script src="./js/site.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+</head>
+<body data-page="careers">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="concept-bar no-print">
+    <div class="container concept-bar-inner">
+      <div class="concept-notice">
+        <span class="concept-pill">Sample Concept</span>
+        <span>Redesign prototype for Sioux City Foundry Co. leadership review. Not the live corporate site.</span>
+      </div>
+      <div class="concept-controls">
+        <div class="theme-switch" role="group" aria-label="Switch visual concept">
+          <button type="button" class="theme-btn" data-set-theme="light">Precision Light</button>
+          <button type="button" class="theme-btn" data-set-theme="dark">Executive Dark</button>
+        </div>
+        <a class="pitch-link" href="./modernization.html">Tech &amp; CMS Pitch &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="brand" href="./index.html">
+        <img src="./assets/scfvectorlogo_white.png" alt="Sioux City Foundry Co." />
+        <div class="brand-name">Sioux City Foundry Co.<small>One-Stop Metal Shop · Est. 1871</small></div>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="./index.html" data-nav="home">Home</a></li>
+        <li><a href="./divisions.html" data-nav="divisions">Divisions</a></li>
+        <li><a href="./stock-book.html" data-nav="stock">Stock Book</a></li>
+        <li><a href="./careers.html" data-nav="careers">Careers</a></li>
+        <li><a href="./about.html" data-nav="about">About</a></li>
+        <li><a href="./news.html" data-nav="news">News</a></li>
+        <li><a href="./modernization.html" data-nav="modernization">Tech Pitch</a></li>
+        <li><a class="nav-cta" href="./contact.html" data-nav="contact">Request Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main" x-data="{
+    job: null,
+    notFound: false,
+    init() {
+      const id = new URLSearchParams(window.location.search).get('id');
+      window.SCF.loadJobsData().then(list => {
+        const found = list.find(j => j.id === id) || (!id ? list.find(j => j.published) : null);
+        if (found) {
+          this.job = found;
+          document.title = found.title + ' | Careers | Sioux City Foundry Co.';
+        } else {
+          this.notFound = true;
+        }
+      });
+    },
+    copyLink() {
+      window.SCF.copyText(window.location.href, 'Direct job link copied');
+    }
+  }">
+    <template x-if="job">
+      <div>
+        <section class="page-hero">
+          <div class="container">
+            <div style="margin-bottom:0.75rem;" class="no-print"><a href="./careers.html" class="mono" style="font-size:0.84rem;">&larr; Back to all open roles</a></div>
+            <div class="job-tags">
+              <span class="tag" x-text="job.department"></span>
+              <span class="tag tag-accent" x-text="job.plant"></span>
+              <span class="tag tag-ok" x-text="job.type"></span>
+              <span class="mono" style="font-size:0.78rem; color:var(--ink-muted);" x-text="'Ref: ' + job.sourceJobId + ' · Posted ' + window.SCF.formatDate(job.posted)"></span>
+            </div>
+            <h1 x-text="job.title"></h1>
+            <p class="mono" style="font-size:0.94rem;" x-text="job.location"></p>
+            <div class="btn-row no-print" style="margin-top: 1rem;">
+              <a class="btn btn-primary" :href="'mailto:' + job.applyEmail + '?subject=' + encodeURIComponent('Application: ' + job.title + ' (' + job.sourceJobId + ')')">Email Resume to Recruiting</a>
+              <a class="btn btn-blue" :href="job.applyHref" target="_blank" rel="noopener">Official Application Form ↗</a>
+              <button type="button" class="btn btn-secondary" @click="copyLink()">Copy Direct Link</button>
+              <button type="button" class="btn btn-secondary" onclick="window.print()">Print Job Sheet</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="container">
+            <div class="div-block" style="margin-bottom:0;">
+              <div>
+                <h2>Role Overview</h2>
+                <p x-text="job.detail.description"></p>
+
+                <h3 style="margin-top:1.5rem;">Required Experience &amp; Skills</h3>
+                <ul class="feature-list">
+                  <template x-for="item in job.detail.requiredExperience" :key="item">
+                    <li x-text="item"></li>
+                  </template>
+                </ul>
+
+                <h3 style="margin-top:1.5rem;">Additional Requirements</h3>
+                <ul class="feature-list">
+                  <template x-for="item in job.detail.otherRequirements" :key="item">
+                    <li x-text="item"></li>
+                  </template>
+                </ul>
+
+                <div class="callout" style="margin-top:1.5rem;">
+                  <strong>Notes &amp; Equal Opportunity:</strong>
+                  <ul class="feature-list" style="margin:0.45rem 0 0;">
+                    <template x-for="n in job.detail.notes" :key="n">
+                      <li x-text="n"></li>
+                    </template>
+                  </ul>
+                </div>
+              </div>
+
+              <aside class="side-panel">
+                <h3>Position Summary</h3>
+                <div class="desk-row"><strong>Shift</strong><span class="mono" style="text-align:right; font-size:0.84rem;" x-text="job.detail.shift"></span></div>
+                <div class="desk-row"><strong>Education</strong><span style="text-align:right; font-size:0.86rem;" x-text="job.detail.education"></span></div>
+                <div class="desk-row"><strong>Experience</strong><span style="text-align:right; font-size:0.86rem;" x-text="job.detail.yearsExperience"></span></div>
+                <div class="desk-row"><strong>Pay (Sample)</strong><span class="mono" style="text-align:right; font-size:0.84rem;" x-text="job.detail.payRate"></span></div>
+                <div class="desk-row"><strong>Documents</strong><span style="text-align:right; font-size:0.86rem;" x-text="job.detail.requiredDocuments.join(', ')"></span></div>
+
+                <h4 style="margin-top:1.35rem; margin-bottom:0.4rem;">HR Contact</h4>
+                <p style="font-size:0.88rem; margin-bottom:0.25rem;"><strong x-text="job.detail.hrName"></strong></p>
+                <p style="font-size:0.88rem; margin-bottom:0.25rem;"><a class="mono" :href="'tel:' + job.detail.hrPhone.replace(/[^0-9]/g, '')" x-text="job.detail.hrPhone"></a></p>
+                <p style="font-size:0.88rem; margin-bottom:1rem;"><a :href="'mailto:' + job.detail.hrEmail" x-text="job.detail.hrEmail"></a></p>
+
+                <div class="btn-row no-print">
+                  <a class="btn btn-primary btn-sm" style="width:100%;" :href="'mailto:' + job.applyEmail + '?subject=' + encodeURIComponent('Application: ' + job.title)">Apply via Email</a>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+      </div>
+    </template>
+
+    <section class="section" x-show="notFound" x-cloak>
+      <div class="container">
+        <div class="panel">
+          <h1>Position not found</h1>
+          <p>This sample posting may have been unpublished or removed. Browse all open roles on the Careers page.</p>
+          <a class="btn btn-primary" href="./careers.html">View Open Careers</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="padding-top:0;">
+      <span>&copy; 2026 Sioux City Foundry Co. Sample redesign concept for demonstration only.</span>
+      <span>Equal Opportunity Employer · <a href="./careers.html">All Open Positions</a></span>
+    </div>
+  </footer>
+</body>
+</html>

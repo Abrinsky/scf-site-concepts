@@ -1,0 +1,326 @@
+[
+  {
+    "id": "cnc-machinist-programmer-128",
+    "sourceJobId": "SCF128",
+    "title": "CNC Machinist / Programmer",
+    "department": "Contract Manufacturing",
+    "plant": "Plant 1",
+    "location": "Plant 1 - 801 Division St, Sioux City, IA",
+    "shiftGroup": "Day",
+    "type": "Full-time",
+    "summary": "Set up, operate, and modify CNC mill programs, fixtures, and tooling for Contract Manufacturing.",
+    "detail": {
+      "description": "The CNC Machinist/Programmer sets up, operates, and modifies programs on CNC mills for the Contract Manufacturing division. Duties include optimizing programs and cutting techniques, setting up machines, editing programs and offsets, changing tooling and work holding, building fixtures, performing preventive maintenance, and maintaining a neat work area.",
+      "shift": "Day shift",
+      "requiredExperience": [
+        "Experience with vertical machining centers, slant bed turning centers, manual knee mills, and manual lathes.",
+        "Ability to hold tolerances to .001 inch.",
+        "Experience with micrometers, calipers, dial indicators, edge finders, gauges, surface grinders, and band saws.",
+        "MIG and TIG welding experience."
+      ],
+      "otherRequirements": [
+        "High school diploma and/or vocational technical training.",
+        "CAD and CAM experience and general computer knowledge.",
+        "Ability to read and interpret GD&T and engineering drawings.",
+        "Ability to operate overhead cranes and forklifts.",
+        "Fanuc and Haas control knowledge preferred."
+      ],
+      "education": "High school diploma or technical training",
+      "yearsExperience": "1+ year",
+      "payRate": "Sample / illustrative: BOE hourly",
+      "requiredDocuments": ["Resume"],
+      "hrName": "Jessica Christiansen",
+      "hrEmail": "recruiting@siouxcityfoundry.com",
+      "hrPhone": "712-226-1118",
+      "notes": [
+        "Sample listing for the SCF redesign concept. Confirm current availability and terms with HR.",
+        "Sioux City Foundry Co. is an Equal Opportunity Employer.",
+        "Pre-employment drug screen and physical required."
+      ]
+    },
+    "applyEmail": "recruiting@siouxcityfoundry.com",
+    "applyHref": "https://www.siouxcityfoundry.com/employ.lasso",
+    "published": true,
+    "posted": "2026-09-25"
+  },
+  {
+    "id": "production-south-sioux-city-038",
+    "sourceJobId": "SCF38",
+    "title": "Foundry Production Operator",
+    "department": "Metal Casting",
+    "plant": "Plant 2",
+    "location": "Plant 2 - 2400 G St, South Sioux City, NE",
+    "shiftGroup": "Day (4x10)",
+    "type": "Full-time",
+    "summary": "Work on a foundry production line at Plant 2 with cross-training on equipment, hand tools, and machine operations.",
+    "detail": {
+      "description": "This production role supports a line of operations within the Metal Casting division at Plant 2. The sample schedule is Monday through Thursday, 5:00 AM to 3:30 PM, with possible Friday overtime from 5:00 AM to 10:00 AM. Cross-training is available, and duties may include forklift and machine operation.",
+      "shift": "Monday through Thursday, 5:00 AM to 3:30 PM (possible Friday OT 5:00 AM to 10:00 AM)",
+      "requiredExperience": [
+        "Ability to lift 50 pounds.",
+        "Comfort working with hand tools such as grinders and hammers.",
+        "Ability to remain on your feet for extended periods.",
+        "Foundry or industrial manufacturing experience is a plus."
+      ],
+      "otherRequirements": [
+        "Forklift and machine operation training provided as needed.",
+        "Strong commitment to shop-floor safety procedures."
+      ],
+      "education": "Not specified in sample posting",
+      "yearsExperience": "Entry level (0+ years)",
+      "payRate": "Sample / illustrative: starting at $17.00 hourly",
+      "requiredDocuments": ["None required to apply"],
+      "hrName": "Jessica Christiansen",
+      "hrEmail": "recruiting@siouxcityfoundry.com",
+      "hrPhone": "712-226-1118",
+      "notes": [
+        "Sample listing for the SCF redesign concept. Confirm current availability and terms with HR.",
+        "Sioux City Foundry Co. is an Equal Opportunity Employer.",
+        "Pre-employment drug screen and physical required."
+      ]
+    },
+    "applyEmail": "recruiting@siouxcityfoundry.com",
+    "applyHref": "https://www.siouxcityfoundry.com/employ.lasso",
+    "published": true,
+    "posted": "2026-09-22"
+  },
+  {
+    "id": "pattern-maker-258",
+    "sourceJobId": "SCF258",
+    "title": "Pattern Maker",
+    "department": "Metal Casting",
+    "plant": "Plant 2",
+    "location": "Plant 2 - 2400 G St, South Sioux City, NE",
+    "shiftGroup": "Day",
+    "type": "Full-time",
+    "summary": "Design, fabricate, finish, and repair wood, plastic, and metal patterns for iron castings.",
+    "detail": {
+      "description": "The Pattern Maker designs and fabricates patterns used for gray and ductile iron casting. Duties include interpreting engineering drawings, collaborating on manufacturability, completing pattern finishing and repairs, and verifying dimensions and tolerances.",
+      "shift": "Day shift",
+      "requiredExperience": [
+        "Ability to read and interpret blueprints, drawings, and technical specifications.",
+        "Understanding of materials and processes used in pattern making and metal casting.",
+        "Familiarity with CNC machinery and woodworking/metalworking hand tools.",
+        "Technical degree or pattern-making apprenticeship preferred."
+      ],
+      "otherRequirements": [
+        "Strong attention to detail and dimensional accuracy.",
+        "Ability to fabricate and repair patterns in wood, plastic, and metal.",
+        "Strong communication and collaboration with foundry floor teams."
+      ],
+      "education": "High school diploma or equivalent",
+      "yearsExperience": "1+ year",
+      "payRate": "Sample / illustrative: BOE hourly",
+      "requiredDocuments": ["Resume"],
+      "hrName": "Jessica Christiansen",
+      "hrEmail": "recruiting@siouxcityfoundry.com",
+      "hrPhone": "712-226-1282",
+      "notes": [
+        "Sample listing for the SCF redesign concept. Confirm current availability and terms with HR.",
+        "Sioux City Foundry Co. is an Equal Opportunity Employer.",
+        "Pre-employment drug screen and physical required."
+      ]
+    },
+    "applyEmail": "recruiting@siouxcityfoundry.com",
+    "applyHref": "https://www.siouxcityfoundry.com/employ.lasso",
+    "published": true,
+    "posted": "2026-09-20"
+  },
+  {
+    "id": "laborer-045",
+    "sourceJobId": "SCF45",
+    "title": "Epoxy Rebar Booth Operator / Laborer",
+    "department": "Reinforcing Steel",
+    "plant": "Plant 1",
+    "location": "Plant 1 - 801 Division St, Sioux City, IA",
+    "shiftGroup": "Day",
+    "type": "Full-time",
+    "summary": "Support the Reinforcing Steel epoxy coating line, general labor, and coating documentation.",
+    "detail": {
+      "description": "This booth operator team member performs general labor and coating-line support in the Reinforcing Steel department. Schedule is Monday through Friday, 7:00 AM to 3:30 PM.",
+      "shift": "Day, Monday through Friday, 7:00 AM to 3:30 PM",
+      "requiredExperience": [
+        "No prior experience required; on-the-job training provided."
+      ],
+      "otherRequirements": [
+        "Ability to stand for 8 or more hours.",
+        "Basic computer skills to update coating records accurately.",
+        "Reliable attendance and safety focus."
+      ],
+      "education": "High school diploma or equivalent",
+      "yearsExperience": "Entry level (0+ years)",
+      "payRate": "Sample / illustrative: $17.00 hourly",
+      "requiredDocuments": ["None required to apply"],
+      "hrName": "Jessica Christiansen",
+      "hrEmail": "recruiting@siouxcityfoundry.com",
+      "hrPhone": "712-226-1118",
+      "notes": [
+        "Sample listing for the SCF redesign concept. Confirm current availability and terms with HR.",
+        "Sioux City Foundry Co. is an Equal Opportunity Employer.",
+        "Pre-employment drug screen and physical required."
+      ]
+    },
+    "applyEmail": "recruiting@siouxcityfoundry.com",
+    "applyHref": "https://www.siouxcityfoundry.com/employ.lasso",
+    "published": true,
+    "posted": "2026-09-18"
+  },
+  {
+    "id": "manager-contract-mfg-166",
+    "sourceJobId": "SCF166",
+    "title": "Manager - Contract Manufacturing",
+    "department": "Contract Manufacturing",
+    "plant": "Plant 1",
+    "location": "Plant 1 - 801 Division St, Sioux City, IA",
+    "shiftGroup": "Day",
+    "type": "Full-time",
+    "summary": "Oversee contract manufacturing operations, supplier performance, CAD/CAM workflow, quality, and capacity.",
+    "detail": {
+      "description": "The Contract Manufacturing Manager leads production operations, supplier coordination, cost control, and capacity planning across welding, machining, coping, and fabricated tank packages while partnering with engineering, quality, and sales teams.",
+      "shift": "Day shift",
+      "requiredExperience": [
+        "3 or more years of CNC programming experience and blueprint reading.",
+        "Advanced CAD/CAM software experience (Surfcam, Edgecam, or Mastercam); SolidWorks preferred.",
+        "Experience overseeing production, quality, scheduling, and customer service.",
+        "Working knowledge of inventory control, supply chain, and ERP systems."
+      ],
+      "otherRequirements": [
+        "Strong leadership, communication, and problem-solving skills.",
+        "Ability to manage budgets, schedules, and cross-functional shop teams."
+      ],
+      "education": "High school diploma or associate degree",
+      "yearsExperience": "3 to 5 years",
+      "payRate": "Sample / illustrative: BOE",
+      "requiredDocuments": ["Resume"],
+      "hrName": "Jessica Christiansen",
+      "hrEmail": "recruiting@siouxcityfoundry.com",
+      "hrPhone": "712-226-1282",
+      "notes": [
+        "Sample listing for the SCF redesign concept. Confirm current availability and terms with HR.",
+        "Sioux City Foundry Co. is an Equal Opportunity Employer.",
+        "Pre-employment drug screen and physical required."
+      ]
+    },
+    "applyEmail": "recruiting@siouxcityfoundry.com",
+    "applyHref": "https://www.siouxcityfoundry.com/employ.lasso",
+    "published": true,
+    "posted": "2026-09-14"
+  },
+  {
+    "id": "sales-engineer-266",
+    "sourceJobId": "SCF266",
+    "title": "Sales Engineer - Castings & Metal Solutions",
+    "department": "Sales & Engineering",
+    "plant": "Plant 1 & Plant 2",
+    "location": "Sioux City, IA / South Sioux City, NE (confirm with HR)",
+    "shiftGroup": "Day",
+    "type": "Full-time",
+    "summary": "Review customer prints, recommend practical casting solutions, prepare quotations, and guide projects through production.",
+    "detail": {
+      "description": "The Sales Engineer builds relationships with new and existing OEM customers, reviews prints and technical specs, recommends gray and ductile iron casting solutions, prepares quotes, and coordinates projects with engineering, quality, and foundry operations.",
+      "shift": "Day shift (confirm travel and schedule with HR)",
+      "requiredExperience": [
+        "Ability to interpret engineering drawings, GD&T, and material specifications.",
+        "3 or more years of technical sales, manufacturing, or engineering experience.",
+        "Metal casting, foundry operations, or industrial machining background strongly preferred."
+      ],
+      "otherRequirements": [
+        "Ability to prepare technical quotes and guide jobs from pattern to production.",
+        "Willingness to travel to customer sites and trade events as needed."
+      ],
+      "education": "High school diploma or technical/engineering degree",
+      "yearsExperience": "3+ years preferred",
+      "payRate": "Sample / illustrative: BOE",
+      "requiredDocuments": ["Resume"],
+      "hrName": "Jessica Christiansen",
+      "hrEmail": "recruiting@siouxcityfoundry.com",
+      "hrPhone": "712-226-1118",
+      "notes": [
+        "Sample listing for the SCF redesign concept. Confirm exact schedule and location with HR.",
+        "Sioux City Foundry Co. is an Equal Opportunity Employer.",
+        "Pre-employment drug screen and physical required."
+      ]
+    },
+    "applyEmail": "recruiting@siouxcityfoundry.com",
+    "applyHref": "https://www.siouxcityfoundry.com/employ.lasso",
+    "published": true,
+    "posted": "2026-09-10"
+  },
+  {
+    "id": "custodian-grounds-keeper-044",
+    "sourceJobId": "SCF44",
+    "title": "Custodian / Grounds Keeper",
+    "department": "Office & Facilities",
+    "plant": "Plant 1",
+    "location": "Plant 1 - 801 Division St, Sioux City, IA",
+    "shiftGroup": "Day",
+    "type": "Full-time",
+    "summary": "Maintain a clean, safe, orderly facility and well-kept grounds across Plant 1.",
+    "detail": {
+      "description": "The Custodian and Grounds Keeper maintains a clean, safe, orderly workplace inside and outside Plant 1, handling routine custodial work, grounds upkeep, landscaping, and general property care. Hours are Monday through Friday, 8:00 AM to 5:00 PM.",
+      "shift": "Day, Monday through Friday, 8:00 AM to 5:00 PM",
+      "requiredExperience": [
+        "Previous custodial, janitorial, or groundskeeping experience preferred.",
+        "Ability to safely operate lawn and grounds equipment.",
+        "Self-directed with strong attention to detail."
+      ],
+      "otherRequirements": [
+        "Ability to lift, bend, walk, and work outdoors in varying weather.",
+        "Valid driver's license preferred."
+      ],
+      "education": "Not specified in sample posting",
+      "yearsExperience": "Entry level / preferred experience",
+      "payRate": "Sample / illustrative: $16.00 hourly, BOE",
+      "requiredDocuments": ["None required to apply"],
+      "hrName": "Jessica Christiansen",
+      "hrEmail": "recruiting@siouxcityfoundry.com",
+      "hrPhone": "712-226-1118",
+      "notes": [
+        "Sample listing for the SCF redesign concept. Confirm current availability and terms with HR.",
+        "Sioux City Foundry Co. is an Equal Opportunity Employer.",
+        "Pre-employment drug screen and physical required."
+      ]
+    },
+    "applyEmail": "recruiting@siouxcityfoundry.com",
+    "applyHref": "https://www.siouxcityfoundry.com/employ.lasso",
+    "published": true,
+    "posted": "2026-09-08"
+  },
+  {
+    "id": "warehouse-laser-operator-sample",
+    "sourceJobId": "SCF-DRAFT",
+    "title": "Bystronic Laser Table Operator (Sample Draft)",
+    "department": "Steel Warehouse",
+    "plant": "Plant 1",
+    "location": "Plant 1 - 801 Division St, Sioux City, IA",
+    "shiftGroup": "2nd Shift",
+    "type": "Full-time",
+    "summary": "Unpublished sample draft showing how HR can stage roles in a CMS and publish with one toggle.",
+    "detail": {
+      "description": "Illustrative draft posting demonstrating how HR can stage upcoming roles (such as Bystronic laser cutting operators) off-site and flip them live in seconds without touching FileMaker, Lasso, or Dreamweaver.",
+      "shift": "2nd Shift (illustrative)",
+      "requiredExperience": [
+        "Experience operating CNC laser or plasma cutting tables preferred.",
+        "Ability to verify sheet thickness, material grade, and cut tolerances."
+      ],
+      "otherRequirements": [
+        "Overhead crane and forklift experience preferred.",
+        "Safety-first mindset in a steel service center environment."
+      ],
+      "education": "High school diploma or equivalent",
+      "yearsExperience": "1+ year preferred",
+      "payRate": "Sample / illustrative: BOE hourly",
+      "requiredDocuments": ["Resume"],
+      "hrName": "Jessica Christiansen",
+      "hrEmail": "recruiting@siouxcityfoundry.com",
+      "hrPhone": "712-226-1118",
+      "notes": [
+        "Draft demo role included to test the HR Quick-Publish toggle in the preview drawer."
+      ]
+    },
+    "applyEmail": "recruiting@siouxcityfoundry.com",
+    "applyHref": "https://www.siouxcityfoundry.com/employ.lasso",
+    "published": false,
+    "posted": "2026-11-20"
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "group": "Flat Rolled",
+    "category": "Plate & Sheet",
+    "products": "Carbon steel plate, hot-rolled sheet, cold-rolled sheet, floor plate, and cut-to-size blanks.",
+    "processing": "Shearing, Bystronic laser cutting, hi-def plasma cutting",
+    "howToOrder": "Verify thickness and grade in the Stock Book PDF, then call Warehouse Sales."
+  },
+  {
+    "group": "Structural",
+    "category": "Beams, Channels & Angles",
+    "products": "Wide-flange beams, standard I-beams, structural channel, bar channel, equal and unequal leg angles.",
+    "processing": "Saw cutting, miter cutting, Voortman Beamliner coping (via Contract Mfg)",
+    "howToOrder": "Provide section size, length, and quantity when calling 888-331-4660."
+  },
+  {
+    "group": "Bars",
+    "category": "Rounds, Flats & Squares",
+    "products": "Hot-rolled and cold-finished round bar, flat bar, square bar, and key stock.",
+    "processing": "Cut-to-length production sawing",
+    "howToOrder": "Match mill dimensions in the official Stock Book PDF and confirm current stock."
+  },
+  {
+    "group": "Tubular",
+    "category": "Structural Tube & Pipe",
+    "products": "Square and rectangular HSS structural tubing, mechanical tubing, and schedule pipe.",
+    "processing": "Production saw cutting and end prep",
+    "howToOrder": "Specify OD/dimensions, wall thickness, and length with Warehouse Sales."
+  },
+  {
+    "group": "Specialty & Safety",
+    "category": "Safety Gratings & Walkways",
+    "products": "Grip Strut style safety gratings, industrial walkways, stair treads, and ladder rungs.",
+    "processing": "Cut-to-size panels and stair tread fabrication",
+    "howToOrder": "Ask Warehouse Sales for panel widths, gauge, and current stock lead times."
+  },
+  {
+    "group": "Attachments & Blades",
+    "category": "Cutting Blades & Snow Pushers",
+    "products": "Grader, dozer, and scraper cutting edges, plow blades, and heavy-duty snow pushers.",
+    "processing": "Ready-to-ship stock edges and fabricated pusher packages",
+    "howToOrder": "Call 888-331-4660 with equipment make/model or bolt-hole pattern."
+  }
+]

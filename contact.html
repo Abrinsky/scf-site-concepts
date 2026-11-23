@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact &amp; RFQ Router | Sioux City Foundry Co.</title>
+  <meta name="description" content="Contact Sioux City Foundry Co. Plant 1 and Plant 2 division sales desks, send an RFQ, or reach Recruiting." />
+  <link rel="icon" href="./assets/scfvectorlogo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script src="./js/site.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+</head>
+<body data-page="contact">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="concept-bar no-print">
+    <div class="container concept-bar-inner">
+      <div class="concept-notice">
+        <span class="concept-pill">Sample Concept</span>
+        <span>Redesign prototype for Sioux City Foundry Co. leadership review. Not the live corporate site.</span>
+      </div>
+      <div class="concept-controls">
+        <div class="theme-switch" role="group" aria-label="Switch visual concept">
+          <button type="button" class="theme-btn" data-set-theme="light">Precision Light</button>
+          <button type="button" class="theme-btn" data-set-theme="dark">Executive Dark</button>
+        </div>
+        <a class="pitch-link" href="./modernization.html">Tech &amp; CMS Pitch &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="brand" href="./index.html">
+        <img src="./assets/scfvectorlogo_white.png" alt="Sioux City Foundry Co." />
+        <div class="brand-name">Sioux City Foundry Co.<small>One-Stop Metal Shop · Est. 1871</small></div>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="./index.html" data-nav="home">Home</a></li>
+        <li><a href="./divisions.html" data-nav="divisions">Divisions</a></li>
+        <li><a href="./stock-book.html" data-nav="stock">Stock Book</a></li>
+        <li><a href="./careers.html" data-nav="careers">Careers</a></li>
+        <li><a href="./about.html" data-nav="about">About</a></li>
+        <li><a href="./news.html" data-nav="news">News</a></li>
+        <li><a href="./modernization.html" data-nav="modernization">Tech Pitch</a></li>
+        <li><a class="nav-cta" href="./contact.html" data-nav="contact">Request Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main" x-data="{
+    desks: {
+      warehouse: { name: 'Steel Service Center (Warehouse)', phone: '888-331-4660', tel: '18883314660', plant: 'Plant 1 - 801 Division St, Sioux City, IA 51105', email: 'sales@siouxcityfoundry.com', note: 'Plate, sheet, structural shapes, tube, Bystronic lasers, plasma, gratings, cutting blades, snow pushers.' },
+      rebar: { name: 'Reinforcing Steel (Rebar)', phone: '888-331-0678', tel: '18883310678', plant: 'Plant 1 - 801 Division St, Sioux City, IA 51105', email: 'sales@siouxcityfoundry.com', note: 'Black and epoxy-coated rebar cut, bent, and coated in-house. CRSI and EIG member.' },
+      contract: { name: 'Contract Manufacturing', phone: '888-844-4126', tel: '18888444126', plant: 'Plant 1 - 801 Division St, Sioux City, IA 51105', email: 'sales@siouxcityfoundry.com', note: 'Robotic & custom welding, Machining Center, Voortman beam coping, Sherman Tank built-to-spec, Wine On the Wall.' },
+      foundry: { name: 'Metal Casting Foundry', phone: '888-550-2564', tel: '18885502564', plant: 'Plant 2 - 2400 G St, South Sioux City, NE 68776', email: 'sales@siouxcityfoundry.com', note: 'Gray and ductile iron castings from ounces to ~3,500 lbs (green sand & no-bake). Local: 402-494-2491.' },
+      careers: { name: 'HR & Recruiting', phone: '712-226-1118', tel: '17122261118', plant: 'Plant 1 & Plant 2 Hiring', email: 'recruiting@siouxcityfoundry.com', note: 'Equal Opportunity Employer. Direct job links live on the Careers page.' }
+    },
+    selected: 'foundry',
+    name: '',
+    company: '',
+    email: '',
+    details: '',
+    init() {
+      const d = new URLSearchParams(window.location.search).get('division');
+      if (d && this.desks[d]) this.selected = d;
+    },
+    get desk() { return this.desks[this.selected]; },
+    openMailto() {
+      const subject = 'RFQ / Inquiry (' + this.desk.name + ')' + (this.company ? ' - ' + this.company : '');
+      const body = 'Name: ' + (this.name || '(not provided)') + '\nCompany: ' + (this.company || '(not provided)') + '\nReply Email: ' + (this.email || '(not provided)') + '\nDivision: ' + this.desk.name + '\n\nProject / Part Details:\n' + (this.details || '(attach drawings or specs)');
+      window.location.href = 'mailto:' + this.desk.email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      window.SCF.showToast('Opened email draft routed to ' + this.desk.email);
+    }
+  }">
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">Contact &amp; Division RFQ Router</div>
+        <h1>Reach the Desk That Owns Your Job.</h1>
+        <p>Two campuses across Sioux City, IA and South Sioux City, NE with direct division lines so buyers reach estimating without phone trees.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="div-block">
+          <div>
+            <h2>Interactive RFQ / Inquiry Form (Sample)</h2>
+            <p style="color:var(--ink-muted); font-size:0.94rem;">Pick a division to see the direct phone desk immediately, or prepare a pre-routed email draft. In production on Cloudflare Pages, this single form submits cleanly through a <strong>Cloudflare Worker + Turnstile</strong> endpoint with zero spam-plugin clutter.</p>
+
+            <form @submit.prevent="openMailto()" style="display:flex; flex-direction:column; gap:0.85rem; margin-top:1.1rem;">
+              <div class="field">
+                <label for="rfq-div">Which division handles your request?</label>
+                <select id="rfq-div" x-model="selected">
+                  <option value="warehouse">Steel Service Center (Warehouse) - 888-331-4660</option>
+                  <option value="rebar">Reinforcing Steel (Rebar) - 888-331-0678</option>
+                  <option value="contract">Contract Manufacturing / Coping / Tanks - 888-844-4126</option>
+                  <option value="foundry">Metal Casting Foundry (Plant 2) - 888-550-2564</option>
+                  <option value="careers">HR &amp; Careers - 712-226-1118</option>
+                </select>
+              </div>
+              <div class="grid-2" style="gap:0.85rem;">
+                <div class="field">
+                  <label for="rfq-name">Your Name</label>
+                  <input id="rfq-name" class="input" x-model="name" placeholder="Jane Buyer" />
+                </div>
+                <div class="field">
+                  <label for="rfq-company">Company</label>
+                  <input id="rfq-company" class="input" x-model="company" placeholder="Midwest Equipment Co." />
+                </div>
+              </div>
+              <div class="field">
+                <label for="rfq-email">Work Email</label>
+                <input id="rfq-email" class="input" type="email" x-model="email" placeholder="buyer@company.com" />
+              </div>
+              <div class="field">
+                <label for="rfq-details">Part, Alloy, Quantity or Project Notes</label>
+                <textarea id="rfq-details" x-model="details" placeholder="Include alloy/grade, approximate weight or dimensions, quantity, and target delivery window..."></textarea>
+              </div>
+              <div class="callout callout-ok" style="font-size:0.84rem;">
+                <strong>Production Anti-Spam Architecture:</strong> Replaced 5x reCAPTCHA + broken client-side Turnstile tags with one server-verified <strong>Cloudflare Turnstile</strong> check inside a Cloudflare Worker. (This GitHub Pages demo opens a pre-filled <code>mailto:</code> draft instead of submitting to a live server.)
+              </div>
+              <div class="btn-row">
+                <button type="submit" class="btn btn-primary">Prepare Email Draft for Desk</button>
+                <a class="btn btn-secondary" :href="'tel:' + desk.tel" x-text="'Call ' + desk.phone"></a>
+              </div>
+            </form>
+          </div>
+
+          <aside class="side-panel">
+            <span class="tag">Routed Desk</span>
+            <h3 style="margin-top:0.5rem;" x-text="desk.name"></h3>
+            <a class="phone-big" :href="'tel:' + desk.tel" x-text="desk.phone"></a>
+            <p style="font-size:0.9rem;" x-text="desk.note"></p>
+            <div class="desk-row"><strong>Campus</strong><span style="text-align:right; font-size:0.85rem;" x-text="desk.plant"></span></div>
+            <div class="desk-row"><strong>Email</strong><a :href="'mailto:' + desk.email" x-text="desk.email"></a></div>
+            <div class="desk-row"><strong>Main Switchboard</strong><a href="tel:18008310874">800-831-0874</a></div>
+
+            <h4 style="margin-top:1.35rem; margin-bottom:0.45rem;">Official Channels</h4>
+            <p style="font-size:0.86rem; margin-bottom:0;">
+              <a href="https://www.facebook.com/siouxcityfoundry" target="_blank" rel="noopener">Facebook</a> ·
+              <a href="https://www.linkedin.com/pub/sioux-city-foundry-co/3a/a06/320" target="_blank" rel="noopener">LinkedIn</a> ·
+              <a href="https://twitter.com/SCFoundry" target="_blank" rel="noopener">X / Twitter</a> ·
+              <a href="https://www.youtube.com/@Siouxcityfoundry" target="_blank" rel="noopener">YouTube</a>
+            </p>
+          </aside>
+        </div>
+
+        <div class="grid-2" style="margin-top:1.5rem;">
+          <div class="panel">
+            <div class="eyebrow">Plant 1 · Corporate &amp; Steel Campus</div>
+            <h3>Sioux City, Iowa</h3>
+            <p style="margin-bottom:0.4rem;">801 Division St, Sioux City, IA 51105</p>
+            <p class="mono" style="margin-bottom:0;">Toll-Free: <a href="tel:18008310874">800-831-0874</a> · Local: <a href="tel:17122524181">712-252-4181</a></p>
+          </div>
+          <div class="panel">
+            <div class="eyebrow">Plant 2 · Iron Foundry Campus</div>
+            <h3>South Sioux City, Nebraska</h3>
+            <p style="margin-bottom:0.4rem;">2400 G St, South Sioux City, NE 68776</p>
+            <p class="mono" style="margin-bottom:0;">Toll-Free: <a href="tel:18885502564">888-550-2564</a> · Local: <a href="tel:14024942491">402-494-2491</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="padding-top:0;">
+      <span>&copy; 2026 Sioux City Foundry Co. Sample redesign concept for demonstration only.</span>
+      <span>Equal Opportunity Employer · <a href="./modernization.html">Modernization Pitch</a></span>
+    </div>
+  </footer>
+</body>
+</html>

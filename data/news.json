@@ -1,0 +1,95 @@
+[
+  {
+    "id": "wine-on-the-wall",
+    "title": "Wine On the Wall Stainless Wine Storage Line",
+    "date": "2024-03-12",
+    "category": "Specialty Product",
+    "summary": "Architectural stainless steel wine racks manufactured by our Contract Manufacturing team for residential cellars and commercial hospitality spaces.",
+    "href": "https://abrinsky.github.io/WineOnTheWall/",
+    "image": "./assets/news/wine-on-the-wall.jpg",
+    "external": true,
+    "detail": {
+      "eyebrow": "Specialty Product Line",
+      "lead": "Wine On the Wall combines Midwest stainless steel fabrication with modern wall-mounted display storage.",
+      "body": [
+        "Manufactured through Sioux City Foundry's Contract Manufacturing division, Wine On the Wall offers clean architectural wine racking built for residential cellars, restaurants, and tasting rooms.",
+        "This link opens the companion Wine On the Wall sample redesign (including an interactive 360-degree cellar panorama tour) so leadership can review both properties together."
+      ],
+      "highlights": [
+        "Fabricated in-house by Contract Manufacturing",
+        "Stainless steel wall-mounted configurations",
+        "Interactive 360 cellar tour on the companion sample site"
+      ],
+      "notes": "Companion sample site: https://abrinsky.github.io/WineOnTheWall/ (official site: wineonthewall.com)."
+    }
+  },
+  {
+    "id": "manufacturing-marvels",
+    "title": "National Spotlight: Manufacturing Marvels Feature",
+    "date": "2015-06-01",
+    "category": "Media Archive",
+    "summary": "Sioux City Foundry Co. was featured on Manufacturing Marvels, highlighting our two-plant Midwest metalworking and foundry operations.",
+    "href": "./news-article.html?id=manufacturing-marvels",
+    "image": "./assets/news/manufacturing-marvels.jpg",
+    "detail": {
+      "eyebrow": "Media Archive",
+      "lead": "Sioux City Foundry Co. appeared on Manufacturing Marvels, a national television spotlight profiling American manufacturers.",
+      "body": [
+        "The segment highlighted Sioux City Foundry's long-standing role as a regional metal supply, reinforcing steel, contract manufacturing, and iron casting partner.",
+        "Archived here as part of company history rather than an active campaign."
+      ],
+      "highlights": [
+        "National television feature profiling American manufacturing",
+        "Showcased Siouxland shop-floor teams and capabilities",
+        "Archived media milestone"
+      ],
+      "notes": "Historical media milestone based on publicly listed company recognition."
+    }
+  },
+  {
+    "id": "cfa-safety-2014",
+    "title": "CFA Zero Lost Days Safety Award Recognition",
+    "date": "2014-12-15",
+    "category": "Safety Recognition",
+    "summary": "Recognized by the Central Fabricators Association for achieving zero lost days due to workplace injury across 2014.",
+    "href": "./news-article.html?id=cfa-safety-2014",
+    "image": "./assets/news/cfa-safety.jpg",
+    "detail": {
+      "eyebrow": "Safety Recognition",
+      "lead": "In 2014, Sioux City Foundry Co. earned the Central Fabricators Association Zero Lost Days Safety Award.",
+      "body": [
+        "Safety across foundry pouring floors, crane bays, laser tables, and rebar yards starts with daily shop-floor discipline and clear operating procedures.",
+        "This 2014 recognition remains a proud milestone in the company's public awards archive."
+      ],
+      "highlights": [
+        "Central Fabricators Association recognition",
+        "Zero lost days due to workplace injury in 2014",
+        "Part of SCF's public safety and recognition record"
+      ],
+      "notes": "Historical 2014 award listed in public company materials."
+    }
+  },
+  {
+    "id": "heritage-1871",
+    "title": "Serving Siouxland & the Midwest Since November 1871",
+    "date": "1871-11-01",
+    "category": "Heritage",
+    "summary": "From a corner shop at Main and Seventh in Sioux City to two modern campuses across Iowa and Nebraska.",
+    "href": "./news-article.html?id=heritage-1871",
+    "image": "./assets/news/heritage-foundry.jpg",
+    "detail": {
+      "eyebrow": "Company Heritage",
+      "lead": "Sioux City Foundry Co. was founded in November 1871 on the corner of Main and Seventh streets in Sioux City, Iowa.",
+      "body": [
+        "Across more than 150 years of family ownership, the company grew into a regional One-Stop Metal Shop operating Plant 1 in Sioux City, Iowa, and Plant 2 in South Sioux City, Nebraska.",
+        "Today four active divisions serve contractors, OEMs, agricultural equipment makers, and builders: Steel Service Center, Reinforcing Steel, Contract Manufacturing, and our Gray and Ductile Iron Foundry."
+      ],
+      "highlights": [
+        "Founded November 1871 in Sioux City, Iowa",
+        "Continuous family ownership and leadership",
+        "Two plants serving Iowa, Nebraska, and the broader Midwest"
+      ],
+      "notes": "Based on published company history."
+    }
+  }
+]

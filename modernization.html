@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Website Modernization Pitch | Sioux City Foundry Co.</title>
+  <meta name="description" content="Executive technical audit of live siouxcityfoundry.com and recommended low-cost modern web + CMS architecture for leadership and IT." />
+  <link rel="icon" href="./assets/scfvectorlogo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script src="./js/site.js"></script>
+</head>
+<body data-page="modernization">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="concept-bar no-print">
+    <div class="container concept-bar-inner">
+      <div class="concept-notice">
+        <span class="concept-pill">Leadership Brief</span>
+        <span>Internal-style technical comparison for SCF leadership &amp; IT review.</span>
+      </div>
+      <div class="concept-controls">
+        <div class="theme-switch" role="group" aria-label="Switch visual concept">
+          <button type="button" class="theme-btn" data-set-theme="light">Precision Light</button>
+          <button type="button" class="theme-btn" data-set-theme="dark">Executive Dark</button>
+        </div>
+        <button type="button" class="pitch-link" style="background:transparent; cursor:pointer;" onclick="window.print()">Print 1-Pager</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="brand" href="./index.html">
+        <img src="./assets/scfvectorlogo_white.png" alt="Sioux City Foundry Co." />
+        <div class="brand-name">Sioux City Foundry Co.<small>One-Stop Metal Shop · Est. 1871</small></div>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="./index.html" data-nav="home">Home</a></li>
+        <li><a href="./divisions.html" data-nav="divisions">Divisions</a></li>
+        <li><a href="./stock-book.html" data-nav="stock">Stock Book</a></li>
+        <li><a href="./careers.html" data-nav="careers">Careers</a></li>
+        <li><a href="./about.html" data-nav="about">About</a></li>
+        <li><a href="./news.html" data-nav="news">News</a></li>
+        <li><a href="./modernization.html" data-nav="modernization">Tech Pitch</a></li>
+        <li><a class="nav-cta" href="./contact.html" data-nav="contact">Request Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">Executive Summary for Leadership &amp; IT</div>
+        <h1>Modernizing siouxcityfoundry.com: Why Replace Dreamweaver &amp; Lasso 9</h1>
+        <p>A factual snapshot of what is currently running on the live corporate site, why routine updates (like spam protection and job postings) burn IT time, and how a modern ~$0 to $20/month stack fixes every issue permanently.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Verified Live Audit (November 2026)</div>
+            <h2>What is currently running on live siouxcityfoundry.com</h2>
+          </div>
+          <p>Every item below was observed directly from live HTTP headers and HTML source on <code>/</code>, <code>/employ.lasso</code>, and <code>/contact</code>.</p>
+        </div>
+
+        <div class="table-wrap" style="margin-bottom:2.2rem;">
+          <table>
+            <thead>
+              <tr>
+                <th>Area</th>
+                <th>Current Live Site (Observed)</th>
+                <th>Business / IT Impact</th>
+                <th>Proposed Modern Stack</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>SSL / HTTPS Security</strong></td>
+                <td><span class="tag tag-danger">Cert Chain Error</span><br />Windows <code>curl</code> / Python SSL reject TLS with <code>SEC_E_UNTRUSTED_ROOT</code> (missing intermediate cert).</td>
+                <td>Strict corporate firewalls, link previews, and automated procurement tools can flag or block the site.</td>
+                <td><span class="tag tag-ok">Auto-Managed SSL</span><br />Cloudflare Pages issues and renews valid edge certificates automatically.</td>
+              </tr>
+              <tr>
+                <td><strong>Mobile &amp; Browser Support</strong></td>
+                <td>Forces <code>IE=7</code> compatibility mode, <strong>zero mobile viewport meta tag</strong>, fixed-width Dreamweaver CS5 templates (<code>HTML5_twoColFixRtHdr.css</code>), 2012 Adobe Spry menu.</td>
+                <td>Difficult to read on phones (where job applicants and field buyers browse); brittle HTML caused the broken homepage footer bug.</td>
+                <td>Responsive CSS Grid/Flexbox tested at mobile, tablet, desktop, and clean print-to-PDF stylesheets.</td>
+              </tr>
+              <tr>
+                <td><strong>Dead Third-Party Scripts</strong></td>
+                <td>Loads dead Google Code <code>html5shiv</code> (shut down 2015, over <code>http://</code>), dead AddThis widgets (shut down 2023, loaded twice), retired Google <code>UA-1064417-1</code> (2023), EOL jQuery 2.2.4 (2016).</td>
+                <td>Slow page loads, mixed-content warnings, and unnecessary security surface.</td>
+                <td>Zero legacy plugins, zero jQuery, ~15 KB Alpine.js only where needed; sub-second global CDN load times.</td>
+              </tr>
+              <tr>
+                <td><strong>Contact &amp; Spam Protection</strong></td>
+                <td><code>/contact</code> loads Google reCAPTCHA <strong>5 times</strong> + Cloudflare Turnstile <strong>twice</strong> + a broken client-side <code>&lt;script src=".../turnstile/v0/siteverify"&gt;</code> tag, mixed with Formoid, EmailJS, Mailchimp, and iContact.</td>
+                <td>Explains why spam blocking took weeks to wrestle into place and still breaks easily on template edits.</td>
+                <td>One clean RFQ form verified server-side by a 30-line <strong>Cloudflare Worker + Turnstile</strong> endpoint, routing directly to division emails.</td>
+              </tr>
+              <tr>
+                <td><strong>Jobs &amp; HR Publishing</strong></td>
+                <td>FileMaker + <strong>Lasso 9</strong> renders every job as a <code>POST</code> form (<code>/employment/job_id.lasso</code>). HR fills clunky FileMaker text boxes.</td>
+                <td>Job listings have <strong>no direct shareable URL</strong> for Indeed, LinkedIn, or texting candidates. IT maintains legacy Lasso middleware.</td>
+                <td>Clean web admin (Headless CMS or <strong>Cloudflare D1 + Access M365 login</strong>): HR clicks Published/Draft in 15 seconds, live immediately with shareable URLs.</td>
+              </tr>
+              <tr>
+                <td><strong>Page Edits &amp; Maintenance</strong></td>
+                <td>Static <code>.dwt</code> templates edited manually in Adobe Dreamweaver.</td>
+                <td>Simple text updates risk breaking layout markup; duplicated copy drifts across pages.</td>
+                <td>Component-based <strong>Astro</strong> templates in Git + automated deploys on push; dynamic content (jobs/news/PDFs) updated by staff without code deploys.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Recommended Production Architecture</div>
+            <h2>Zero Dreamweaver. Zero Lasso. Zero WordPress Plugin Rot.</h2>
+          </div>
+          <p>Built on Cloudflare (which SCF already uses for Turnstile) so IT owns one clean, ultra-reliable account.</p>
+        </div>
+
+        <div class="grid-3" style="margin-bottom:2rem;">
+          <div class="panel">
+            <span class="tag">Layer 1 · Hosting &amp; Edge</span>
+            <h3 style="margin-top:0.55rem;">Cloudflare Pages + Astro</h3>
+            <p style="font-size:0.9rem; color:var(--ink-muted);">Fast static/hybrid marketing pages, automatic HTTPS, DDoS protection, global CDN, and zero Apache/Dreamweaver server maintenance. <strong>Cost: $0/mo</strong> on Cloudflare Pages free tier.</p>
+          </div>
+          <div class="panel">
+            <span class="tag tag-accent">Layer 2 · Dynamic Jobs &amp; News</span>
+            <h3 style="margin-top:0.55rem;">Cloudflare D1 + Access Admin (or Sanity CMS)</h3>
+            <p style="font-size:0.9rem; color:var(--ink-muted);">HR logs in with their Microsoft 365 SCF email, adds/edits jobs or news, and flips a Published switch. Public pages update live with zero site rebuilds and zero FileMaker/Lasso middleware. <strong>Cost: $0 to $20/mo.</strong></p>
+          </div>
+          <div class="panel">
+            <span class="tag tag-ok">Layer 3 · Forms &amp; ERP Option</span>
+            <h3 style="margin-top:0.55rem;">Cloudflare Workers + Turnstile</h3>
+            <p style="font-size:0.9rem; color:var(--ink-muted);">One clean serverless endpoint verifies Turnstile properly and routes RFQs to the right division inbox. FileMaker stays focused on internal ERP; optional FileMaker Data API webhook can sync later if desired.</p>
+          </div>
+        </div>
+
+        <div class="cta-band">
+          <div>
+            <h3>Test both design themes &amp; the live HR Publisher demo</h3>
+            <p>Use the top bar to compare <strong>Precision Light</strong> vs <strong>Executive Dark</strong> (built for Adam's dark-modern preference), or test adding/publishing a job on the Careers page.</p>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="./careers.html#hr-demo">Try HR Quick-Publish Demo</a>
+            <a class="btn btn-blue" href="./index.html?theme=dark">Open Executive Dark View</a>
+            <a class="btn btn-secondary" href="./index.html?theme=light">Open Precision Light View</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="padding-top:0;">
+      <span>&copy; 2026 Sioux City Foundry Co. Sample redesign concept &amp; modernization pitch.</span>
+      <span><a href="./index.html">Back to Home</a></span>
+    </div>
+  </footer>
+</body>
+</html>

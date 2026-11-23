@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>News &amp; Milestones | Sioux City Foundry Co.</title>
+  <meta name="description" content="Company milestones, media archives, safety recognition, and specialty lines from Sioux City Foundry Co." />
+  <link rel="icon" href="./assets/scfvectorlogo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/styles.css" />
+  <script src="./js/site.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
+</head>
+<body data-page="news">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="concept-bar no-print">
+    <div class="container concept-bar-inner">
+      <div class="concept-notice">
+        <span class="concept-pill">Sample Concept</span>
+        <span>Redesign prototype for Sioux City Foundry Co. leadership review. Not the live corporate site.</span>
+      </div>
+      <div class="concept-controls">
+        <div class="theme-switch" role="group" aria-label="Switch visual concept">
+          <button type="button" class="theme-btn" data-set-theme="light">Precision Light</button>
+          <button type="button" class="theme-btn" data-set-theme="dark">Executive Dark</button>
+        </div>
+        <a class="pitch-link" href="./modernization.html">Tech &amp; CMS Pitch &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a class="brand" href="./index.html">
+        <img src="./assets/scfvectorlogo_white.png" alt="Sioux City Foundry Co." />
+        <div class="brand-name">Sioux City Foundry Co.<small>One-Stop Metal Shop · Est. 1871</small></div>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu">Menu</button>
+      <ul class="nav-links" id="nav-menu">
+        <li><a href="./index.html" data-nav="home">Home</a></li>
+        <li><a href="./divisions.html" data-nav="divisions">Divisions</a></li>
+        <li><a href="./stock-book.html" data-nav="stock">Stock Book</a></li>
+        <li><a href="./careers.html" data-nav="careers">Careers</a></li>
+        <li><a href="./about.html" data-nav="about">About</a></li>
+        <li><a href="./news.html" data-nav="news">News</a></li>
+        <li><a href="./modernization.html" data-nav="modernization">Tech Pitch</a></li>
+        <li><a class="nav-cta" href="./contact.html" data-nav="contact">Request Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main" x-data="{ items: [], init() { window.SCF.loadNewsData().then(d => this.items = d); } }">
+    <section class="page-hero">
+      <div class="container">
+        <div class="eyebrow">News, Milestones &amp; Companion Brands</div>
+        <h1>Company Updates &amp; Historical Highlights</h1>
+        <p>Driven from a clean data feed so new announcements, equipment upgrades, or hiring drives can be published without touching page templates.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-2">
+          <template x-for="item in items" :key="item.id">
+            <a class="card" :href="item.href" :target="item.external ? '_blank' : null" :rel="item.external ? 'noopener' : null">
+              <div class="card-media">
+                <img :src="item.image" :alt="item.title" loading="lazy" />
+              </div>
+              <div class="card-body">
+                <div class="job-tags">
+                  <span class="tag" x-text="item.category"></span>
+                  <span class="mono" style="font-size:0.78rem; color:var(--ink-muted);" x-text="window.SCF.formatDate(item.date)"></span>
+                </div>
+                <h3 x-text="item.title"></h3>
+                <p x-text="item.summary"></p>
+                <div class="card-meta">
+                  <span x-text="item.external ? 'Opens Wine On the Wall Sample' : 'Read full article'"></span>
+                  <span x-text="item.external ? 'Visit ↗' : 'Read →'"></span>
+                </div>
+              </div>
+            </a>
+          </template>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="padding-top:0;">
+      <span>&copy; 2026 Sioux City Foundry Co. Sample redesign concept for demonstration only.</span>
+      <span><a href="./index.html">Home</a> · <a href="./modernization.html">Modernization Pitch</a></span>
+    </div>
+  </footer>
+</body>
+</html>
